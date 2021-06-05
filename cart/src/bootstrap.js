@@ -1,5 +1,16 @@
 import faker from 'faker';
 
-const result = `<div>You have ${faker.datatype.number(12)} items in your cart</div>`
+const mount = (el) => {
+  const result = `<div>You have ${faker.datatype.number(12)} items in your cart</div>`
 
-document.querySelector('#dev-cart').innerHTML = result
+  el.innerHTML = result
+  // ReactDOM.render(<App />, el)
+}
+
+if (process.env.NODE_ENV === 'development') {
+const el = document.querySelector('#dev-cart')
+  if (el)
+    mount(el)
+}
+
+export { mount }

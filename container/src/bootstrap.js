@@ -1,4 +1,5 @@
-import 'products/ProductsIndex';
-import 'cart/CartIndex';
+import { mount as renderProducts } from 'products/ProductsIndex';
+import { mount as renderCard } from 'cart/CartIndex';
 
-console.log('Container!');
+renderCard(document.getElementById('cart-container'))
+renderProducts(document.getElementById('products-container'))
